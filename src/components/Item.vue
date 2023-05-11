@@ -15,7 +15,8 @@ export default {
 <template>
     <div class="item" :class="{ selected: isSelected }" @click="changeSelected">
         <div class="name">{{ name }}</div>
-        <div class="price" :class="{ positive: price > 0, negative: price < 0, selected: isSelected }">$ {{ Math.abs(price) }}
+        <div class="price" :class="{ positive: price > 0, negative: price < 0, selected: isSelected }">$ {{ Math.abs(price)
+        }}
         </div>
     </div>
 </template>
@@ -32,8 +33,10 @@ export default {
     margin: 8px;
     transition: 0.2s;
     color: rgb(60, 127, 165);
+
     &:hover {
         background-color: rgb(60, 127, 165);
+        color: white;
     }
 
     .price {

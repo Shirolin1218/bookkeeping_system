@@ -26,7 +26,6 @@ export default {
         },
         goLogin() {//簡單的登入功能，用localStorage做驗證
             if (this.account === localStorage.getItem("account") && this.pwd === localStorage.getItem("pwd")) {
-                localStorage.setItem("itemList", JSON.stringify(this.itemList));
                 this.$router.push("/main");
             } else {
                 alert("登入失敗");
@@ -44,7 +43,7 @@ export default {
 <template>
     <div class="login">
         <div class="container">
-            <h2>LOGIN</h2>
+            <h2>Bookkeeping System</h2>
             <div class="input account">
                 <label for="account">account</label>
                 <input type="text" id="account" v-model="account">
@@ -54,8 +53,8 @@ export default {
                 <input type="password" id="pwd" v-model="pwd">
             </div>
             <div class="btn-area">
-                <button type="button" class="btn" @click="signUp">Sign Up</button>
-                <button type="button" class="btn" @click="goLogin">Login</button>
+                <button type="button" class="btn sign-btn" @click="signUp">Sign Up</button>
+                <button type="button" class="btn login-btn" @click="goLogin">Login</button>
             </div>
         </div>
     </div>
@@ -69,6 +68,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: rgb(60, 127, 165);
 
     .container {
         width: 50vw;
@@ -81,23 +81,50 @@ export default {
             margin: 24px;
             display: flex;
             flex-direction: column;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
 
             input {
+                margin: 8px 0;
+                padding: 6px;
                 font-size: 1.5rem;
+                border-radius: 8px;
             }
         }
 
         .btn-area {
             width: 100%;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             padding: 1rem;
+            margin-top: 32px;
 
             .btn {
-                width: 5rem;
-                height: 2rem;
+                width: 128px;
+                height: 32px;
+                color: white;
+                background-color: rgb(60, 127, 165);
+                border-radius: 8px;
+                border: none;
+                transition: 0.2s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                &:active {
+                    transform: scale(1);
+                }
             }
+
+            .sign-btn {
+                background-color: rgb(161, 185, 199);
+            }
+
+            .login-btn {
+                margin-left: 36px;
+            }
+
+
         }
     }
 }

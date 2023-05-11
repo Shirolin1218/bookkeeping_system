@@ -19,11 +19,11 @@ export default {
     <div class="del-warning">
         <div class="bg"></div>
         <div class="message-box">
-            <button type="button" class="close-btn" @click="close">✖</button>
+            <button type="button" class="btn close-btn" @click="close">✖</button>
             <div class="title">
-                <h2>Warning</h2>
+                <h2>Sure to delete the items?</h2>
             </div>
-            <button type="button" class="btn del" @click="del">確定要刪除嗎?</button>
+            <button type="button" class="btn del" @click="del">delete</button>
         </div>
     </div>
 </template>
@@ -32,6 +32,8 @@ export default {
     width: 100vw;
     height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +56,7 @@ export default {
         padding: 64px;
         background-color: white;
         position: relative;
-        z-index: 2;
+        z-index: 5;
 
         .close-btn {
             position: absolute;
@@ -68,28 +70,26 @@ export default {
 
         .btn {
             padding: 12px 32px;
-            color: white;
-            background-color: rgb(60, 127, 165);
             border-radius: 8px;
             border: none;
-            transition: 0.2s;
 
             &:hover {
                 transform: scale(1.1);
+            }
+        }
+
+        .del {
+            transition: 0.2s;
+            background-color: rgb(161, 185, 199);
+            color: white;
+
+            &:hover {
+                background-color: brown;
             }
 
             &:active {
                 transform: scale(1);
             }
         }
-
-        .del {
-            background-color: rgb(161, 185, 199);
-
-            &:hover {
-                background-color: brown;
-            }
-        }
     }
-}
-</style>
+}</style>

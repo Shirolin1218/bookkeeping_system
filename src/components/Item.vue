@@ -31,7 +31,7 @@ export default {
     align-items: center;
     margin: 8px;
     transition: 0.2s;
-
+    color: rgb(60, 127, 165);
     &:hover {
         background-color: rgb(60, 127, 165);
     }

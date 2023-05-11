@@ -80,10 +80,7 @@ export default {
 }
 </script>
 <template>
-    <AddItem v-show="addShow" @addShow="closeAdd" :isAdd="addShow" />
-    <DelWarning v-show="delShow" @closeDel="changeDel" />
     <div class="main">
-
         <Side :account="account" :balance="balance" />
         <div class="container">
             <h2>這裡是Main</h2>
@@ -108,6 +105,9 @@ export default {
 
         </div>
     </div>
+
+    <AddItem v-if="addShow" @addShow="closeAdd" :isAdd="addShow" />
+    <DelWarning v-if="delShow" @closeDel="changeDel" />
 </template>
 <style lang="scss" scoped>
 .main {
@@ -116,7 +116,6 @@ export default {
     display: flex;
 
     .container {
-        margin: 2rem;
         width: 100%;
         display: flex;
         flex-direction: column;

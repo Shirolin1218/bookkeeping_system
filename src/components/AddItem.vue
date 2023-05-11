@@ -75,7 +75,7 @@ export default {
         padding: 64px;
         background-color: white;
         position: relative;
-        z-index: 2;
+        z-index: 5;
 
         .close-btn {
             position: absolute;

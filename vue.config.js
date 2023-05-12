@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/bookkeeping_system/'
+    publicPath: '/bookkeeping_system/dist'
   }

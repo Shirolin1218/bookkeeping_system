@@ -66,15 +66,18 @@ export default {
 
     mounted() {
         this.account = localStorage.getItem("account");
-        this.itemList = JSON.parse(localStorage.getItem("itemList")),
-            this.itemList.forEach(item => {
-                this.balance += item.price;
-                if (item.price >= 0) {
-                    this.income += item.price;
-                } else {
-                    this.expend += -item.price;
-                }
-            })
+
+        if (localStorage.getItem("itemList")) {
+            this.itemList = JSON.parse(localStorage.getItem("itemList"))
+        }
+        this.itemList.forEach(item => {
+            this.balance += item.price;
+            if (item.price >= 0) {
+                this.income += item.price;
+            } else {
+                this.expend += -item.price;
+            }
+        })
     },
 
 }
